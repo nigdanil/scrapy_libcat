@@ -25,3 +25,14 @@ Check poetry version
 ```
 poetry --version
 ```
+
+Install envorements
+
+```
+poetry install
+
+```
+
+```bash
+poetry run python main.py
+```
