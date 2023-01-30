@@ -8,7 +8,7 @@ website [libcat](https://libcat.ru)
 curl -sSL https://install.python-poetry.org | python -
 ```
 
-Initialisation project
+Project setup
 
 ```bash
 poetry init
@@ -31,8 +31,4 @@ Install envorements
 ```
 poetry install
 
-```
-
-```bash
-poetry run python main.py
 ```
