@@ -30,7 +30,6 @@ Install envorements
 
 ```
 poetry install
-
 ```
 
 ```bash
