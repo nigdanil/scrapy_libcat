@@ -30,5 +30,4 @@ Install envorements
 
 ```
 poetry install
-
 ```
