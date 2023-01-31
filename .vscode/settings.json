@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./scripts",
+        "./scripts/work_with_book"
+    ]
+}
