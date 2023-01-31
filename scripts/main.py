@@ -21,9 +21,9 @@ soup = BeautifulSoup(html_document, 'html.parser')
 # prodInfo = ProductInfo()
 # print(prodInfo.book_info(soup))
 
-about = AboutBook()
-print(about.small_description(soup))
+# about = AboutBook()
+# print(about.small_description(soup))
 
 # Must Fix bug, can remember what argument must give in function=)
-# readPage = ReadPage()
-# print(readPage.read_content(soup))
+readPage = ReadPage()
+print(readPage.read_content(soup))

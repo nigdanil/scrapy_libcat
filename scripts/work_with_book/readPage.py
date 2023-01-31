@@ -2,7 +2,9 @@ class ReadPage:
     def __init__(self):
         self.temp = []
 
-    def read_content(self, arg):
+    def read_content(self, soup):
+
+        arg = soup.select("p")
 
         for i in range(8, 100):
 
