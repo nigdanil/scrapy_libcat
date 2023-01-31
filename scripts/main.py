@@ -7,23 +7,28 @@ from work_with_book.aboutBook import AboutBook
 from work_with_book.readPage import ReadPage
 
 
-doc = readDoc()
-loadDoc = doc.load_document(r'data\oneBookLinks.txt')
+def main():
 
-getURL = GetURL()
-html_document = getURL.getHTMLdocument(loadDoc)
+    doc = readDoc()
+    loadDoc = doc.load_document(r'data\oneBookLinks.txt')
 
-soup = BeautifulSoup(html_document, 'html.parser')
+    getURL = GetURL()
+    html_document = getURL.getHTMLdocument(loadDoc)
 
-# control = ControlWord()
-# print(control.words(soup, "ознакомительный отрывок"))
+    soup = BeautifulSoup(html_document, 'html.parser')
 
-# prodInfo = ProductInfo()
-# print(prodInfo.book_info(soup))
+    control = ControlWord()
+    print(control.words(soup))
 
-# about = AboutBook()
-# print(about.small_description(soup))
+    prodInfo = ProductInfo()
+    print(prodInfo.book_info(soup))
 
-# Must Fix bug, can remember what argument must give in function=)
-readPage = ReadPage()
-print(readPage.read_content(soup))
+    about = AboutBook()
+    print(about.small_description(soup))
+
+    readPage = ReadPage()
+    print(readPage.read_content(soup))
+
+
+if __name__ == "__main__":
+    main()
