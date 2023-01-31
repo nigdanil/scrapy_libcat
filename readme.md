@@ -22,12 +22,18 @@ poetry shell
 
 Check poetry version
 
-```
+```bash
 poetry --version
 ```
 
 Install envorements
 
-```
+```bash
 poetry install
+```
+
+Poerty run Python script
+
+```bash
+poetry run python main.py
 ```
