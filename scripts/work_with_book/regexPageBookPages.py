@@ -24,21 +24,21 @@ class RegexBookPages:
 
     # Need create func what get data array
     # Mocking data array
-    temp = [1, 2, 4, 5]
+    temp = [1, 2, 3, 4, 5, 6, 7, 100]
+    res = [temp[0], temp[-1]]
 
-    # https://libcat.ru/knigi/fantastika-i-fjentezi/alternativnaya-istoriya
-    string_first_part = re.findall(r'^https.*/[0-9]', loadDoc)
+    print(res)
 
-    # /385869-svetlana-shepot-galkino-schaste.html
-    string_last_part = re.findall(r'\/[0-9].*\.html$', loadDoc)
+    for i in range(res[0], res[1]):
 
-    # Need to remove simvol(/) and 385869-
-    # ^\/[0-9]*-
+        string_first_part = re.findall(r'^https.*/[0-9]', loadDoc)
 
-    b = re.findall(r'^\/[0-9]*[-]{1}', string_last_part[0])
+        string_last_part = re.findall(r'\/[0-9].*\.html$', loadDoc)
 
-    c = (b[0] + (f'{temp[3]}-'))
+        a = re.sub(r'^\/[0-9]*-', '', string_last_part[0])
 
-    print(
-        f'1. {loadDoc}\n2. {string_last_part}\n3. {b}\n4. {c}\n5. {string_first_part[0][:-2]}')
-    print(f'{string_first_part[0][:-2]}{c}{string_last_part}')
+        b = re.findall(r'^\/[0-9]*[-]{1}', string_last_part[0])
+
+        c = (b[0] + (f'{i}-'))
+        # Build the links
+        print(f'{string_first_part[0][:-2]}{c}{a}')
