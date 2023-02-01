@@ -16,7 +16,7 @@ class ReadPage:
 
     def read_content(self, soup):
 
-        print(self.get_page_range(soup))
+        # print(self.get_page_range(soup))
 
         arg = soup.select("p")
 
