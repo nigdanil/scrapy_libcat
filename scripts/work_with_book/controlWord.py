@@ -11,16 +11,16 @@ class ControlWord:
 
         brake_word = "ознакомительный отрывок"
 
-        find_tag = "failed"
+        find_brake_word = "failed"
 
-        not_find_tag = "passed"
+        not_find_brake_word = "passed"
 
         if soup.find_all(string=re.compile(f'{brake_word}')):
 
-            self.temp = f'{find_tag}'
+            self.temp = f'{find_brake_word}'
 
         else:
 
-            self.temp = f'{not_find_tag}'
+            self.temp = f'{not_find_brake_word}'
 
         return self.temp
