@@ -2,7 +2,9 @@ from work_with_book import workWithBook
 
 
 def main():
+
     foo = workWithBook.DataCollection
+
     foo.getData()
 
 

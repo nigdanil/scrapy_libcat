@@ -14,6 +14,7 @@ class DataCollection:
     def getData():
 
         zoo = readDataLinks()
+
         links = zoo.datad_books_links()
 
         with open('test.txt', 'w', encoding="utf8")as fr:
@@ -21,26 +22,32 @@ class DataCollection:
             for a in range(len(links)):
 
                 getURL = GetURL()
+
                 html_document = getURL.getHTMLdocument(links[a])
 
                 soup = BeautifulSoup(html_document, 'html.parser')
 
                 # Try get all page count
                 control = ControlWord()
+
                 print(control.words(soup))
 
                 prodInfo = ProductInfo()
+
                 print(prodInfo.book_info(soup))
 
                 readPage = ReadPage()
+
                 print(readPage.get_page_range(soup))
 
                 foo = RegexBookPages()
 
                 mock_data = foo.build_book_links(
+
                     links[a], readPage.get_page_range(soup))
 
                 for i in mock_data:
+
                     fr.write(f'{i}\n')
         fr.close()
 
