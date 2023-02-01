@@ -23,11 +23,14 @@ class DataCollection:
         control = ControlWord()
         print(control.words(soup))
 
-        prodInfo = ProductInfo()
-        print(prodInfo.book_info(soup))
+        # prodInfo = ProductInfo()
+        # print(prodInfo.book_info(soup))
 
-        about = AboutBook()
-        print(about.small_description(soup))
+        # about = AboutBook()
+        # print(about.small_description(soup))
 
         readPage = ReadPage()
         print(readPage.read_content(soup))
+        # Try get all page count
+        # readPage = ReadPage()
+        # print(readPage.get_page_range(soup))

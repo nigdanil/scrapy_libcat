@@ -5,13 +5,13 @@ from fake_useragent import UserAgent
 class GetURL:
 
     def __init__(self):
-        self.text_data = ""
+        self.temp = ""
 
     def getHTMLdocument(self, url):
 
         ua = UserAgent()
         header = {'User-Agent': str(ua.chrome)}
 
-        self.text_data = requests.get(url, proxies=header)
+        self.temp = requests.get(url, proxies=header)
 
-        return self.text_data.text
+        return self.temp.text
