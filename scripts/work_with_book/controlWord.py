@@ -9,14 +9,18 @@ class ControlWord:
 
     def words(self, soup):
 
-        arg = "ознакомительный отрывок"
+        brake_word = "ознакомительный отрывок"
 
-        if soup.find_all(string=re.compile(arg)):
+        find_tag = "failed"
 
-            self.temp = "failed"
+        not_find_tag = "passed"
+
+        if soup.find_all(string=re.compile(f'{brake_word}')):
+
+            self.temp = f'{find_tag}'
 
         else:
 
-            self.temp = "passed"
+            self.temp = f'{not_find_tag}'
 
         return self.temp

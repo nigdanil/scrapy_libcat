@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 
 from work_with_book.getURL import GetURL
 from work_with_book.controlWord import ControlWord
-from work_with_book.productInfo import ProductInfo
+from work_with_book.bookInfo import BookInfo
 from work_with_book.aboutBook import AboutBook
 from work_with_book.readPage import ReadPage
 from work_with_book.regexBookPages import RegexBookPages
@@ -13,17 +13,17 @@ class DataCollection:
 
     def getData():
 
-        zoo = readDataLinks()
+        foo = readDataLinks()
 
-        links = zoo.datad_books_links()
+        links = foo.datad_books_links()
 
         with open('test.txt', 'w', encoding="utf8")as fr:
 
-            for a in range(len(links)):
+            for i in range(len(links)):
 
                 getURL = GetURL()
 
-                html_document = getURL.getHTMLdocument(links[a])
+                html_document = getURL.getHTMLdocument(links[i])
 
                 soup = BeautifulSoup(html_document, 'html.parser')
 
@@ -32,7 +32,7 @@ class DataCollection:
 
                 print(control.words(soup))
 
-                prodInfo = ProductInfo()
+                prodInfo = BookInfo()
 
                 print(prodInfo.book_info(soup))
 
@@ -44,11 +44,11 @@ class DataCollection:
 
                 mock_data = foo.build_book_links(
 
-                    links[a], readPage.get_page_range(soup))
+                    links[i], readPage.get_page_range(soup))
 
-                for i in mock_data:
+                for j in mock_data:
 
-                    fr.write(f'{i}\n')
+                    fr.write(f'{j}\n')
         fr.close()
 
         # about = AboutBook()

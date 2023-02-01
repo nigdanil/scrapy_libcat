@@ -1,4 +1,3 @@
-# from work_with_book.document import Document as readDoc
 from work_with_book.document import Document as readDoc
 
 
