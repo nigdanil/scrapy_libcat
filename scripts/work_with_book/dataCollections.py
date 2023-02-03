@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 
-from work_with_book.getURL import GetURL
+from url.getURL import GetURL
 from work_with_book.controlWord import ControlWord
 from work_with_book.bookInfo import BookInfo
 from work_with_book.aboutBook import AboutBook

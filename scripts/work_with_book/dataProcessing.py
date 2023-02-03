@@ -2,6 +2,8 @@ import json
 
 from work_with_book.dataCollections import Data_Collector
 
+from url.getURL import GetURL
+
 
 class Builder:
 
@@ -21,5 +23,8 @@ class Builder:
 
         # }
 
+        # class ReadPage:
+        # Function read text from page in book
+        # def read_content(self, soup):
         with open(r'data\data.json', 'w', encoding='utf-8') as f:
             json.dump(builder_links[0], f, ensure_ascii=False, indent=4)
