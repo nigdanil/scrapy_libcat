@@ -5,7 +5,7 @@ class ControlWord:
 
     def ___init__(self):
 
-        self.temp = ""
+        self.temp = ''
 
     def words(self, soup):
 

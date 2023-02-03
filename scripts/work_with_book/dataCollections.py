@@ -1,5 +1,4 @@
 from bs4 import BeautifulSoup
-import json
 
 from work_with_book.getURL import GetURL
 from work_with_book.controlWord import ControlWord
@@ -18,6 +17,8 @@ class Data_Collector:
 
     def сrawler(self):
 
+        control_word = 'passed'
+
         readData = readDataLinks()
 
         links = readData.datad_books_links()
@@ -33,7 +34,7 @@ class Data_Collector:
             control = ControlWord()
 
             # Create structure
-            if (control.words(soup)) == "passed":
+            if (control.words(soup)) == control_word:
 
                 prodInfo = BookInfo()
 
@@ -41,12 +42,12 @@ class Data_Collector:
 
                 readPage = ReadPage()
 
-                foo = RegexBookPages()
+                builder_links = RegexBookPages()
 
                 readPage = ReadPage()
 
                 # Pages links generator
-                self.book_pages.append(foo.build_book_links(
+                self.book_pages.append(builder_links.build_book_links(
                     links[i], readPage.get_page_range(soup)))
 
                 self.books_info.append(i)
@@ -58,21 +59,3 @@ class Data_Collector:
                 self.books_info.append(readPage.get_page_range(soup)[-1])
 
         return self.books_info, self.book_pages
-
-    def data_processing(self):
-
-        foo = self.сrawler()
-        # Need refactoring code
-        # self.Books[i] = {
-
-        #     'book_ID': i,
-        #     'prodInfo': self.prodInfo.book_info(soup),
-        #     'about': self.about.small_description(soup),
-        #     'pageCount': self.readPage.get_page_range(soup)[-1],
-        #     # 'book_pages': book_pages[i]
-
-        # }
-
-        with open(r'data\data.json', 'w', encoding='utf-8') as f:
-            json.dump(foo[0], f, ensure_ascii=False, indent=4)
-        # return self.doc.load_document(r'data\oneBookLinks.txt')

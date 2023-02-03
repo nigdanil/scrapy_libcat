@@ -6,7 +6,7 @@ class GetURL:
 
     def __init__(self):
 
-        self.temp = ""
+        self.temp = ''
 
     def getHTMLdocument(self, url):
 

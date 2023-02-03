@@ -8,9 +8,6 @@ class RegexBookPages:
 
     def build_book_links(self, links, arg):
 
-        # Mocking data array
-        # self.temp = [1, 2, 3, 4, 5, 6, 7, 272]
-
         first_patern = r'^https.*/[0-9]'
 
         second_patern = r'\/[0-9].*\.html$'

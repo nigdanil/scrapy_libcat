@@ -1,9 +1,9 @@
-from work_with_book import dataCollections
+from work_with_book import dataProcessing
 
 
 def main():
 
-    foo = dataCollections.Data_Collector()
+    foo = dataProcessing.Builder()
 
     foo.data_processing()
 

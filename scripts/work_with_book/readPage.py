@@ -4,15 +4,15 @@ class ReadPage:
 
         self.temp = []
 
-        self.count = ""
+        self.count = ''
 
     def get_page_range(self, soup):
 
-        pagination_tag_div = "div"
+        pagination_tag_div = 'div'
 
-        pagination_class = "pages"
+        pagination_class = 'pages'
 
-        get_tag_a = "a"
+        get_tag_a = 'a'
 
         pagenav = soup.find(
             f'{pagination_tag_div}', class_=f'{pagination_class}')
@@ -24,13 +24,13 @@ class ReadPage:
 
     def read_content(self, soup):
 
-        reading_text_tag_p = "p"
+        reading_text_tag_p = 'p'
 
         block_read_start = 8
 
         block_read_end = 100
 
-        read_end_control_word = "Шрифт:"
+        read_end_control_word = 'Шрифт:'
 
         arg = soup.select(f'{reading_text_tag_p}')
 
