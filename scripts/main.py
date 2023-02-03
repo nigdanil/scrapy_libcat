@@ -1,11 +1,11 @@
-from work_with_book import workWithBook
+from work_with_book import dataCollections
 
 
 def main():
 
-    foo = workWithBook.DataCollection
+    foo = dataCollections.Data_Collector()
 
-    foo.getData()
+    foo.data_processing()
 
 
 if __name__ == "__main__":
