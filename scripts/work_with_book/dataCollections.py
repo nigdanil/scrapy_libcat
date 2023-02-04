@@ -7,6 +7,7 @@ from work_with_book.aboutBook import AboutBook
 from work_with_book.readPage import ReadPage
 from work_with_book.regexBookPages import RegexBookPages
 from work_with_book.loadDataLinks import LoadDataLinks as readDataLinks
+from work_with_book.bookCover import BookCover
 
 
 class Data_Collector:
@@ -14,6 +15,7 @@ class Data_Collector:
     def __init__(self):
         self.book_pages = []
         self.books_info = []
+        self.booksCovers = []
 
     def сrawler(self):
 
@@ -36,6 +38,8 @@ class Data_Collector:
             # Create structure
             if (control.words(soup)) == control_word:
 
+                dataBooksCover = BookCover()
+
                 prodInfo = BookInfo()
 
                 about = AboutBook()
@@ -50,6 +54,8 @@ class Data_Collector:
                 self.book_pages.append(builder_links.build_book_links(
                     links[i], readPage.get_page_range(soup)))
 
+                self.booksCovers.append(dataBooksCover.book_cover(soup))
+
                 self.books_info.append(i)
 
                 self.books_info.append(prodInfo.book_info(soup))
@@ -58,4 +64,4 @@ class Data_Collector:
 
                 self.books_info.append(readPage.get_page_range(soup)[-1])
 
-        return self.books_info, self.book_pages
+        return self.books_info, self.book_pages, self.booksCovers

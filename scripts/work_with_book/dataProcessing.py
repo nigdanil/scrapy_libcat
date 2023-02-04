@@ -27,6 +27,8 @@ class Builder:
 
         temp_readData = builder_links[1]
 
+        temp_booksCovers = builder_links[2]
+
         prodInfo = 1
 
         about = 2
@@ -38,13 +40,16 @@ class Builder:
 
             Books = {
 
-                'bookNumber': first_iter,
+                'bookID': first_iter,
+
                 'prodInfo': temp_bookInfo[first_iter+prodInfo],
+
+                'bookCover': temp_booksCovers[first_iter],
+
                 'about': temp_bookInfo[first_iter+about],
+
                 'pageCount': temp_bookInfo[first_iter+pageCount]
             }
-
-            print(f'first_iter = {first_iter}')
 
             with open(f'data\data_{first_iter}.json', 'w', encoding='utf-8') as f:
 
