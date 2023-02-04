@@ -13,8 +13,15 @@ from work_with_book.bookCover import BookCover
 class Data_Collector:
 
     def __init__(self):
+
         self.book_pages = []
-        self.books_info = []
+
+        self.books_info_part_1 = []
+
+        self.books_info_part_2 = []
+
+        self.books_info_part_3 = []
+
         self.booksCovers = []
 
     def сrawler(self):
@@ -56,12 +63,11 @@ class Data_Collector:
 
                 self.booksCovers.append(dataBooksCover.book_cover(soup))
 
-                self.books_info.append(i)
+                self.books_info_part_1.append(prodInfo.book_info(soup))
 
-                self.books_info.append(prodInfo.book_info(soup))
+                self.books_info_part_2.append(about.small_description(soup))
 
-                self.books_info.append(about.small_description(soup))
+                self.books_info_part_3.append(
+                    readPage.get_page_range(soup)[-1])
 
-                self.books_info.append(readPage.get_page_range(soup)[-1])
-
-        return self.books_info, self.book_pages, self.booksCovers
+        return self.books_info_part_1, self.books_info_part_2, self.books_info_part_3, self.book_pages, self.booksCovers
