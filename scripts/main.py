@@ -1,7 +1,7 @@
 from work_with_book import dataProcessing
 
 
-def main():
+def main() -> None:
 
     foo = dataProcessing.Builder()
 
